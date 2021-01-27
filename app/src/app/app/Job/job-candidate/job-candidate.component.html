@@ -1,0 +1,17 @@
+<div class="container" >
+    <div class="row float-end">
+        <div class="col col-md-offset-11">
+            <div> <a [routerLink]="[ '/job']">Back</a>  </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+             <app-job-detail *ngIf="job" [showCandidate]="false" [job]="job"></app-job-detail>                    
+             <div *ngFor="let c of job.matchingCandidates">
+                <app-candidate-detail [skills] = "job.skillList" [candidate]="c" ></app-candidate-detail>
+                <hr>
+            </div>
+        </div>        
+    </div>
+</div>
+

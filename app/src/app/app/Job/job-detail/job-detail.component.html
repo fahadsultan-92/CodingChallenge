@@ -1,0 +1,47 @@
+ <div class="row">
+    <div class="col-6">
+        <div class="row">
+            <div class="col-12">
+                <h4><a [routerLink]="[ '/job', job.jobId ]" >{{job.name}}  </a></h4>
+            </div>          
+        </div>    
+        <div class="row">
+            <div class="col-3">
+                Company: 
+            </div>
+            <div class="col-9">
+                {{job.company}}
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-3">
+                Skills: 
+            </div>
+            <div class="col-9">
+                {{job.skills}}
+            </div>
+        </div>
+    </div>
+    <div class="col-6 border" *ngIf="showCandidate">
+        <div class="row">
+            <h6>Top Matching Candidate</h6>
+        </div>
+        <div class="row mt-4" *ngIf="job.matchingCandidates;else noMatchingCandidate">
+
+            <div class="row col">
+                <app-candidate-detail [skills] = "job.skillList" [candidate]="job.matchingCandidates[0]"></app-candidate-detail>
+            </div>
+        </div>
+        <div>
+            <ng-template #noMatchingCandidate>No matching candidate found </ng-template>        
+        </div>
+    </div>
+ </div>
+ 
+    
+
+   <hr>
+
+  
+

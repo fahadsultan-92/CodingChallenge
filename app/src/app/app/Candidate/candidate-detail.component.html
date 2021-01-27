@@ -1,0 +1,20 @@
+    <div class="row">
+        <div class="col-4"> Matching Candidate:</div>
+        <div class="col-8">{{candidate.name}}</div>
+    </div>
+    <div class="row">
+        <div class="col-4"> Total Skills Matched:</div>
+        <div class="col-8">{{candidate.totalMatch}}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <label>Skills:</label>
+        </div>
+        <div class="col-8">
+          <span *ngFor="let s of candidate.skillTagList; let i = index;" [ngClass]="{'bg-selected': s.isMatched}"> 
+            {{s.name}} &nbsp;
+            {{ i != candidate.skillTagList.length - 1 ? ',' : '' }}
+          </span>
+        </div>
+    </div>
