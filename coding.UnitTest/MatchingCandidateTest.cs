@@ -24,7 +24,7 @@ namespace coding.UnitTest
             mockCandidates.Add(new CandidateDto() { candidateId = 2, name = "B", skillTags = "fastlane,detail,data-entry,cooking,service"});
             mockCandidates.Add(new CandidateDto() { candidateId = 3, name = "C", skillTags = "aws,kotlin,data-entry,mobile,service" });
             mockCandidates.Add(new CandidateDto() { candidateId = 4, name = "D", skillTags = "iOS,swift,data-entry,xcode,service" });
-            mockJobAder.Setup(x => x.GetCandidates()).Returns(Task.FromResult(mockCandidates));
+            mockJobAder.Setup(x => x.GetCandidates()).ReturnsAsync(mockCandidates);
         }
 
 
